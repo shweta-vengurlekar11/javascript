@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<h4> The hightest number is:</h4>
-<p id="demo"></p>
-
-<script>
-function largest(p1, p2,p3) {
-  if(p1>p2&&p1>p3)
-  return p1;
-  else if(p2>p3)
-  return p2;
-  else
-  return p3;
-  
-}
-document.getElementById("demo").innerHTML = largest(18,19,1);
-</script>
-
+    enetr numbers <br><br>
+    number 1: <input type="text" id="a"></input><br>
+	 number 2: <input type="text" id="b"></input><br>
+  number 3: <input type="text" id="c"></input><br>
+        <button onclick="large(a.value,b.value,c.value)">OK</button>
+    <script>
+        function large(num1,num2,num3)
+        {
+        
+            if(num1>=num2 && num1>=num3)
+            {
+                document.write(num1+" is greatest");
+            }
+            else if(num2>=num1 && num2>=num3)
+            {
+                document.write(num2+" is greatst");
+            }
+            else if(num3>=num1 && num3>=num2)
+            {
+                document.write(num3+" is greatest");
+            }
+        }
+    </script>
 </body>
 </html>
