@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Create an array having 10 numbers , write a function whose  job is to return max number from the array</h3>
+    <h4>add 10 values</h4>
+    <input type="text" id="arr" />
+    <input type ="button" onclick="addarray()" value="Add" />
+    <br><br>
+    <input type="button" id="button2" value="click to display max value in ans array" onclick="displayarray();"></input>
+    <br><br>
+    <script>
+    var x = 0;
+var array = [];
+
+function addarray()
+{
+ array[x] = document.getElementById("arr").value;
+ x++;
+if(x==9)
+{
+    alert("array limit exceeds");
+}
+}
+function displayarray()
+{
+   var e = "<hr/>";   
+   document.getElementById("Result").innerHTML ="array elements: "+ array;
+   array.sort(function(a, b){return a - b});
+   var max= array[array.length-1];
+  
+   document.getElementById("max1").innerHTML = "maximum value in array: "+ max;
+}     
+    </script>
+    <div id="Result"></div> 
+    <br>
+    <br>
+    <div id="max1"></div> 
+</body>
+</html> 

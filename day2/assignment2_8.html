@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h3>Create an array having 5 names and display it in descending order</h3>
+    <h3>Add 5 names</h3>
+    <input type="text" id="arr" />
+    <input type ="button" onclick="addarray()" value="Add" />
+    <br><br>
+    <input type="button" id="button2" value="click to display in descending order" onclick="displayarray();"></input>
+    <br><br>
+    <script>
+    var x = 0;
+var array = [];
+
+function addarray()
+{
+ array[x] = document.getElementById("arr").value;
+ x++;
+if(x==5)
+{
+    alert("array limit exceeds");
+}
+}
+function displayarray()
+{
+   var e = "<hr/>";   
+   array.sort();
+   array.reverse();
+   document.getElementById("Result").innerHTML = array;
+}
+    </script>
+    <div id="Result"></div> 
+</body>
+</html> 

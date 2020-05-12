@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Declare a string   having an email Id and check if @ is there in the string or not</h3>
+<br><br>
+<input type="text" id="text1" placeholder="enter email-id"></input>
+<button type="button" onclick="check(text1.value)">click @</button>
+<script>
+    function check(str){
+        var c=str.includes('@');
+    if(c==true)
+    {
+        window.alert("email-id includes @");
+    }
+    else{
+        window.alert("email-id doesnot includes @");
+    }
+    }
+
+</script>
+<p id="demo"></p>
+
+</body>
+</html> 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h3>Declare a string having a 10 digit mobile number. Write a function whose
+         job is to check if it has 10 digits or not</h3>
+<h3>enter Mobile number here</h3>
+<br><br>
+<input type="text" id="text1" placeholder="enter mobile number"></input>
+<button type="button" onclick="check(text1.value)">click here</button>
+<script>
+    function check(str){
+    var len=str.length;
+    if(len==10)
+    {
+        alert("length is appropriate");
+    }
+   else
+   alert("length is not equal to 10");
+    }
+
+</script>
+<p id="demo"></p>
+
+</body>
+</html> 
