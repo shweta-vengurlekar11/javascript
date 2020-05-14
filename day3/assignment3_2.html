@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+    <h3>Create class Account having property name, balance. Write method deposit whose job is to
+        increase balance with the amount deposited by user. 
+       Create two object and call deposit method. Write method display which will display name and balance </h3>
+    <h4>write deposit ammount in the box:</h4>
+    <input type="number" id="no" /><br><br>
+   
+    <input type="button" id="button2" value="Click to deposite amount" onclick="deposit(no.value);"></input><br><br>
+    <input type="button" id="button1" value="Click to see display account holders details" onclick="display();"></input>
+    <br><br>
+    <script>
+class Account {
+  constructor(name,balance) {
+    this.name = name;
+    this.balance=balance;
+  }
+  depo(ammount) {
+      this.balance=this.balance+parseInt(ammount);
+  }
+  display()
+  {
+    return this.name+" "+this.balance;
+  }
+}
+a=new Account("shweta",1000);
+function deposit(ammount)
+{
+a.depo(ammount);
+}
+function display(ammount)
+{
+    document.getElementById('demo').innerHTML=a.display();  
+}
+
+</script>
+<p id="demo"></p>
+    
+</body>
+</html> 

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+    <h3>Using arrow function, print factorial of a number</h3>
+    <h4>write number in the box:</h4>
+    <input type="text" id="no" /><br><br>
+    <input type="button" id="button2" value="click to display factorial of a number" onclick="displayfact(no.value);"></input>
+    <br><br>
+    <script>
+
+    displayfact= (n)=>{
+    var fact=1;
+        try{
+            if(n=="") throw "empty";
+            if(isNaN(n)) throw "not a number";
+            else{
+                for (i = 1; i <= parseInt(n); ++i) {
+            fact *= i;
+        }      
+
+    document.getElementById('demo').innerHTML="factorial of a number is: "+ fact;
+   
+            }
+        }catch(err) {
+  document.getElementById("demo").innerHTML = err;
+}
+
+       
+    }
+    
+</script>
+<p id="demo"></p>
+<p id="demo1"></p>
+</body>
+</html> 

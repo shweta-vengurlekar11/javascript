@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h3>Create class math having two static methods, cube and square, 
+        whose job is to return the square and cube of a number</h4>
+        <h4>Enter number in the box:</h4>
+    <input type="number" id="no" /><br><br>
+   
+    <input type="button" id="button2" value="square of a number" onclick="square(no.value);"></input><br><br>
+    <input type="button" id="button1" value="cube of a number" onclick="cube(no.value);"></input>
+    <br><br>
+
+<script>
+class Math1 {
+  constructor(numb) {
+    this.n = parseInt(numb);
+  }
+  static squar(x) {
+    let a=x.n;
+    return (a*a);
+  }
+  static cub(x) {
+    let a=x.n;
+    return (a*a*a);
+ 
+  }
+}
+function square(numb){
+    mynumber = new Math1(numb);
+document.getElementById("demo").innerHTML = "The square is "+ Math1.squar(mynumber);
+}
+function cube(numb){
+    mynumber = new Math1(numb);
+document.getElementById("demo").innerHTML = "The cube is " + Math1.cub(mynumber);
+}
+</script>
+<p id="demo"></p>
+
+
+</body>
+</html>
