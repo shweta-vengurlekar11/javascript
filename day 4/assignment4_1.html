@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <head>
+        <style>
+    
+            body {
+            background-color: linen;
+            }
+            table {
+                float:center;
+                border-collapse: collapse;
+                border-spacing: 5px;
+            }
+            td {
+                padding: 10px;
+            }
+        </style>
+    </head>
+<h3 align="center">Registration Form</h3>
+<form onsubmit="return myFunction()" action="onsubmit.html" method="post" >
+<table border="1px" align="center">
+    <tr><td>UserId:</td>
+    <td><input type="text" id="nm" placeholder="enter userid" required /></td></tr>
+    <tr><td>Password:</td>
+    <td><input type="password" id="pw" placeholder="enter password" min="8" required /></td></tr>
+    <tr><td>Mobile Number:</td>
+    <td><input type="number" id="mn" placeholder="enter mobile number" min="10" required></td></tr>
+    <tr><td>Address:</td>
+    <td><textarea type="text" id="ad" placeholder="enter Address" required ></textarea></td></tr>
+    <tr><td>Age:</td>
+    <td><input type="number" id="ag" placeholder="enter Age " min="18" max="100" required></td></tr>
+             
+    <tr><td colspan="2" align="center"><input type="submit" value="submit"/>&nbsp;&nbsp;&nbsp;<input type="reset" value="Reset"/></td></tr>
+
+</table>
+</form>
+<script>
+    function myFunction() {
+        let nm1=document.getElementById("nm").value;
+        let i=nm1.length;
+        let pw1= document.getElementById("pw").value;
+        let mn1= document.getElementById("mn").value;
+        if(i<3 || i>15){
+        alert("username should be between 3 to 15 characters");
+        return false;
+        }
+        else if(pw1.length<8){
+        alert("password shoud be greater that 8 characters");
+        return false;
+        }
+        else if(mn1.length != 10){
+        alert("Mobille number should be 10 digit number");
+        return false;
+        }
+       else
+           return true;       
+  }  
+</script>
+</body>
+</html>
