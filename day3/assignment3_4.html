@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+ 
+    <h4>enter deposit ammount in the box:</h4>
+    <h4>ACCOUNT 1</h4>
+    <label>Enter Name1 : </label>
+    <input type="text" id="name1">
+    <label>Enter Initial Balance : </label>
+    <input type="number" id="balance1"><br>
+    <h4>ACCOUNT 2</h4>
+    <label >Enter Name2 : </label>
+    <input type="text" id="name2">
+    <label >Enter Initial Balance : </label>
+    <input type="number" id="balance2"><br><br>
+    <button onclick="createobj()">CREATE ACCOUNTS</button><br><br>
+    <hr>
+  <h4>write deposit ammount in the box:</h4>
+    <input type="number" id="no" /><br><br>
+   <input type="button" id="button2" value="Click to deposit amount in account 1" onclick="deposit(no.value);"></input>&nbsp;&nbsp;
+   <input type="button" id="button2" value="Click to deposit amount in account 2" onclick="deposit1(no.value);"></input><br><br>
+    <h4>write withdraw ammount in the box:</h4>
+    <input type="number" id="no1" /><br><br>
+   <input type="button" id="button2" value="Click to withdraw amount from account 1" onclick="withdraw(no1.value);"></input>&nbsp;&nbsp;
+   <input type="button" id="button2" value="Click to withdraw amount from account 2" onclick="withdraw1(no1.value);"></input><br><br>
+   <hr><br> 
+   <input type="button" id="button1" value="Click to see display account 1 holder's details" onclick="display();"></input>
+    &nbsp;&nbsp;
+    <input type="button" id="button1" value="Click to see display account 2 holder's details" onclick="display1();"></input>
+    <br><br>
+    <script>
+class Account {
+  constructor(name,balance) {
+    this.name = name;
+    this.balance=balance;
+  }
+  depo(ammount) {
+      this.balance=this.balance+parseInt(ammount);
+  }
+  
+}
+class curr_account extends Account
+{
+    constructor(name,balance)
+    {
+        super(name,balance);
+    }
+    withd(ammount) {
+      this.balance=this.balance-parseInt(ammount);
+  }
+  display()
+  {
+    return this.name+" "+this.balance;
+  }
+}
+function createobj()
+{
+  let n1 = document.getElementById("name1").value;
+  let b1 =parseInt(document.getElementById("balance1").value);
+  let n2 = document.getElementById("name2").value;
+  let b2 =parseInt(document.getElementById("balance2").value);
+  a = new curr_account (n1,b1);
+  b = new curr_account (n2,b2);
+}
+function deposit(ammount)
+  {
+  a.depo(ammount);
+  }
+function deposit1(ammount)
+  {
+  b.depo(ammount);
+  }
+function withdraw(ammount)
+  {
+  a.withd(ammount);
+  }
+function withdraw1(ammount)
+  {
+  b.withd(ammount);
+  }
+function display()
+  {
+      document.getElementById('demo').innerHTML=a.display();  
+  }
+function display1()
+  {
+      document.getElementById('demo').innerHTML=b.display();  
+  }
+
+</script>
+<p id="demo"></p>
+    
+</body>
+</html> 
