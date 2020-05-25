@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h4>enter Employee details:</h4>
+    <h4>Employee 1</h4>
+    <label>Enter ID : </label>
+    <input type="number" id="id1">
+    <label>Enter Name : </label>
+    <input type="text" id="name1">
+    <label>Enter Salary : </label>
+    <input type="number" id="sal1"><br>
+    <h4>Employee 2</h4>
+    <label>Enter ID : </label>
+    <input type="number" id="id2">
+    <label>Enter Name : </label>
+    <input type="text" id="name2">
+    <label>Enter Salary : </label>
+    <input type="number" id="sal2"><br><br>
+    <button onclick="createobj()">Create Employee Profiles</button><br><br>
+    
+    <hr>
+    <h4>enter Employee id for calculation of net salary:</h4>
+    <label>Enter Id: </label>
+    <input type="number" id="id3"><br><br>
+    <button onclick="netsal()">Click to print net salary</button>
+<script>
+class Employee {
+set id1(id)
+{
+    this.id=id;
+}
+ set nam(name)
+{
+    this.name=name;
+}
+set sal(sa)
+{
+    this.salary=sa;
+}
+get netsal()
+ {
+     let sal=parseInt(this.salary);
+     let net=sal-((10*sal)/100);
+     return net;
+ }
+}
+function createobj()
+{
+     i1 =parseInt(document.getElementById("id1").value);
+    let n1 = document.getElementById("name1").value;
+    let b1 =parseInt(document.getElementById("sal1").value);
+     i2 =parseInt(document.getElementById("id2").value);
+    let n2 = document.getElementById("name2").value;
+    let b2 =parseInt(document.getElementById("sal2").value);
+     emp1=new Employee();
+     emp2=new Employee();
+   emp1.id1=i1;emp1.nam=n1;emp1.sal=b1;
+   emp2.id1=i2;emp2.nam=n2;emp2.sal=b2;    
+}
+function netsal()
+{
+    let id=document.getElementById("id3").value;
+    let i=parseInt(id);
+    if(i===i1)
+    {
+        document.getElementById("demo").innerHTML="net salary of employee 1 is : "+emp1.netsal;
+    }
+    if(i===i2)
+    {
+        document.getElementById("demo").innerHTML="net salary of employee 2 is : "+emp2.netsal;
+    }
+}
+</script>
+<br><p id="demo"></p>
+<p id="demo1"></p>
+</body>
+</html>

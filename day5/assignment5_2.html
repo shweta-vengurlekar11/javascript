@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h4>enter student details and marks:</h4>
+    <h4>student 1</h4>
+    <label>Enter roll number : </label>
+    <input type="number" id="id1">
+    <label>Enter Name : </label>
+    <input type="text" id="name1"><br><br>
+    <label>Enter Marks1 : </label>
+    <input type="number" id="m1">
+    <label>Enter Marks2 : </label>
+    <input type="number" id="m2">
+    <label>Enter Marks3 : </label>
+    <input type="number" id="m3"><br>
+    <h4>student 2</h4>
+    <label>Enter roll number : </label>
+    <input type="number" id="id2">
+    <label>Enter Name : </label>
+    <input type="text" id="name2"><br><br>
+    <label>Enter Marks1 : </label>
+    <input type="number" id="m4">
+    <label>Enter Marks1 : </label>
+    <input type="number" id="m5">
+    <label>Enter Marks1 : </label>
+    <input type="number" id="m6"><br><br>
+    <button onclick="createobj()">Create Student Details</button><br><br>
+    
+    <hr>
+    <h4>enter Employee id for calculation of net salary:</h4>
+    <label>Enter Id: </label>
+    <input type="number" id="id3"><br><br>
+    <button onclick="netsal()">Click to print net salary</button>
+<script>
+class Student {
+    set Name(a)
+  {
+    this._name= a;
+	}
+	set rollno(b)
+	{
+	this._rollno=b;
+	}
+	set marks1(c)
+	{
+	this._marks1= c;
+	}
+	set marks2(d)
+	{
+	this._marks2=d;
+	}
+	set marks3(e)
+	{
+	this._marks3= e;
+  }
+  get Name()
+  {
+      return this._name;
+  }
+  get total()
+  {
+      let tot=this._marks1+this._marks2+this._marks3;
+      return tot;
+  }
+  get percentage()
+  {
+return  ((this._marks1+this._marks2+this._marks3)/300)*100;
+  }
+
+}
+function createobj()
+{
+     i1 =parseInt(document.getElementById("id1").value);
+    let n1 = document.getElementById("name1").value;
+    let m1 =parseInt(document.getElementById("m1").value);
+    let m2 =parseInt(document.getElementById("m2").value);
+    let m3 =parseInt(document.getElementById("m3").value);
+     i2 =parseInt(document.getElementById("id2").value);
+    let n2 = document.getElementById("name2").value;
+    let m4 =parseInt(document.getElementById("m4").value);
+    let m5 =parseInt(document.getElementById("m5").value);
+    let m6 =parseInt(document.getElementById("m6").value);
+    std1=new Student();
+    std2=new Student();
+    std1.rollno=id1;std1.Name=n1;std1.marks1=m1;std1.marks2=m2;std1.marks3=m3;
+    std2.rollno=id2;std2.Name=n2;std2.marks1=m4;std2.marks2=m5;std2.marks3=m6;
+}
+function netsal()
+{
+    let id=document.getElementById("id3").value;
+    let i=parseInt(id);
+    if(i===i1)
+    {
+        document.getElementById("nam").innerHTML="total and percentage for "+ std1.Name +" is ";
+        document.getElementById("demo").innerHTML="total: "+std1.total;
+        document.getElementById("demo1").innerHTML="percentage: "+std1.percentage;
+    }
+    if(i===i2)
+    {
+        document.getElementById("nam").innerHTML="total and percentage for "+ std2.Name +" is ";
+        document.getElementById("demo").innerHTML="total: "+std2.total;
+        document.getElementById("demo1").innerHTML="percentage: "+std2.percentage;
+    }
+}
+</script>
+<br>
+<p id="nam"></p>
+<p id="demo"></p>
+<p id="demo1"></p>
+</body>
+</html>
