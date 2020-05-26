@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h4>Example for Default Paramenters in function</h4>
+        <label>Enter a Numbers: </label>
+        <input type="number" id="no"/>
+        <input type="number" id="no1"/>
+        <input type="number" id="no2"/>
+        <button onclick="sum(no.value,no1.value,no2.value)">click</button><br>
+        <br>
+        <p id="demo"></p>
+        <script>
+            function sum(no=0,no1=0,no2=0) {
+                let a=Number(no);
+                let b=Number(no1);
+                let c=Number(no2);
+           let sum1 = a+b+c;
+             document.getElementById("demo").innerHTML="sum of number is "+ sum1;
+        }    
+        </script>
+    </body>
+</html>

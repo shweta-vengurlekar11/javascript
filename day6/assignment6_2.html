@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h4>write a self invoking function whose job is to return square of a number.</h4>
+        <label>Enter a Number: </label>
+        <input type="number" id="no"/>
+        <button onclick="sum()">click</button>
+        <p id="demo"></p>
+        <script>
+            function sum()
+            {
+                let i=parseInt(document.getElementById("no").value);
+                if(i===0)
+                {
+                    document.getElementById("demo").innerHTML="value should be greater than 0";
+                }
+                else{
+                    (function (na) {
+                    document.getElementById("demo").innerHTML = "Square is "+(na*na);
+                    })(i);
+                }
+            }
+        </script>
+    </body>
+</html>
