@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><body>
+<h4> Create a dropdown box showing the number 1 to 10.
+    Write your name in p tag let user select option from dropdown and that font size 
+    should be applied to the data in p tag
+</h4>
+<label for="font">Choose a font-size:</label>
+
+<select name="font" id="font" onchange="myfunction()">
+    <option value="">select</option>
+  <option value="1px">1</option>
+  <option value="2px">2</option>
+  <option value="3px">3</option>
+  <option value="4px">4</option>
+  <option value="5px">5</option>
+  <option value="6px">6</option>
+  <option value="7px">7</option>
+  <option value="8px">8</option>
+  <option value="9px">9</option>
+  <option value="10px">10</option>
+  
+</select>
+<script>
+   function myfunction()
+   {
+       let x=document.getElementById("font").value;
+       document.getElementById("demo").style.fontSize=x;
+   }
+</script>
+<p id="demo">shweta vengurlekar</p>
+</body></html>

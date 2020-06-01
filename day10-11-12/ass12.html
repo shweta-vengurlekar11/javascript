@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h4>SELECT BOOK YOU WANT</h4>
+c++ price:200<input type="checkbox"  name="p" value="200"><br>
+
+PHP price:300<input type="checkbox"  name="p" value="300"><br>
+
+JAVA price:500<input type="checkbox"  name="p" value="500"><br>
+<br>
+<button onclick="price()">calculate</button><br><br>
+<input type="text" id="price"/>
+<script>
+    function price()
+    {
+        let ele=document.getElementsByName("p");
+        let txt=0;
+        for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked) 
+                {
+                txt+=parseInt(ele[i].value); 
+                }
+    }
+    document.getElementById("price").value=txt;
+    }
+</script>
+    </body>
+</html>

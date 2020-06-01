@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h4>Write your name in red colour , on a button click it should change the text colour to blue</h4>
+        <p id="demo" style="color:red">Shweta Vengurlekar</p>
+        <button onclick="document.getElementById('demo').style.color='blue'">click me</button>
+
+    <hr>
+        <h4>Write your name in h1 tag align it to the left, on button click it should align to right</h4>
+        <h1 id="demo1" style="text-align:left">Shweta Vengurlekar</h1>
+        <button onclick="document.getElementById('demo1').style.textAlign='right'">click me</button>
+    <hr>
+        <h4>Write your name in p tag with background colour blue and text in white colour ,
+             on button click it should reverse the colour ie. Text colour blue and background colour white</h4>
+        <p id="demo2" style="background-color:blue;color:white;">Shweta Vengurlekar</p>
+        <button onclick="_3()">click me</button>
+    <hr>
+        <h4> Create three radio buttons which show names of colour. Create a text box.
+             Let user enter name in text box and select radio button , 
+            on clicking the text in a text box should get respective colour.</h4>
+        Red:<input type="radio" value="red" name="co" id="red"/>&nbsp;&nbsp;
+        Blue:<input type="radio" value="blue" name="co" id="blue"/>&nbsp;&nbsp;
+        Green:<input type="radio" value="green" name="co" id="green"/>&nbsp;&nbsp;
+        <input type="text" id="ss" onchange="myFunction()">
+   
+       <script>
+     function myFunction() { 
+            var ele = document.getElementsByName('co'); 
+              
+            for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked) 
+                {
+                document.getElementById("ss").style.color = ele[i].value; 
+                }
+            } 
+        } 
+    function _3()
+    {
+        document.getElementById('demo2').style.backgroundColor='white';
+        document.getElementById('demo2').style.color='blue';
+    }
+</script>
+<p id="hey"></p>
+    </body>
+
+</html>

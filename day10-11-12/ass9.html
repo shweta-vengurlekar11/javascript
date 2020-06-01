@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><body>
+    <h4> Create a textbox ,and a span tag, 
+         on change event on text box it should display data entered in text box 
+         in span tag which is next to it text box.</h4>
+    <input type="text" id="nm" onchange="ch()"/>
+    <span id="sn"></span>
+    <hr>
+    <h4> Create text box and a span tag , on change it should give error if user keeps text box empty.<h4>
+        <input type="text" id="nm1" onclick="ch1()"/>
+        <span id="sn1"></span>
+    <script>
+        function ch()
+        {
+            document.getElementById("sn").innerHTML=document.getElementById("nm").value;
+        }
+        function ch1()
+        {
+            if(document.getElementById("nm1").value=="")
+            document.getElementById("sn1").innerHTML="value cannot be empty";
+            else
+            document.getElementById("sn1").innerHTML=document.getElementById("nm1").value;
+        }
+        
+    </script>
+</body></html>

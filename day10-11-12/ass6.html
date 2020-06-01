@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><body>
+<h4> Create three text boxes and two radio buttons showing value “add” and “subtract”. 
+    Let user enter number in two text boxes and as per the selected radio button it should display
+     result in the 3rd text box.
+</h4>
+<input type="text" id="n1"/>
+<input type="text" id="n2"/>
+<input type="text" id="n3"/>
+Add:<input type="radio" value="+" name="co" onchange="add()"/>&nbsp;&nbsp;
+Subtract<input type="radio" value="-" name="co" onchange="subtract()"/>&nbsp;&nbsp;
+<script>
+    function add()
+    {
+        let x=parseInt(document.getElementById("n1").value);
+        let y=parseInt(document.getElementById("n2").value);
+        document.getElementById("n3").value=x+y;
+    }
+    function subtract()
+    {
+        let x=document.getElementById("n1").value;
+        let y=document.getElementById("n2").value;
+        document.getElementById("n3").value=x-y;
+    }
+</script>
+</body></html>

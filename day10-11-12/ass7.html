@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p  style="background-color:blue"> My Name is shweta vengurlekar</p>
+<p  style="background-color:blue"> I like to read books</p>
+<p  style="background-color:blue"> Right now I am doing cdac from Vita institute</p>
+<button type="button" onclick=" ptag()"> click here</button>
+<script>
+function ptag(){
+var y = document.getElementsByTagName("p");
+var count = 0;
+for (var i = 0; i < y.length; i++) {
+  count++;
+}
+document.getElementById("demo").innerHTML=count;
+}
+</script>
+<h4 id="demo"></h4>
+</body>
+</html>

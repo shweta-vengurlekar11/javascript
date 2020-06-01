@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><body>
+<h4> Write your friends name using OL tag. Create a button whose job is to delete the 1st name from the OL tag
+</h4>
+
+<ol>
+    <li >pooja</li>
+    <li >aishwarya</li>
+    <li >ashwini</li>
+  </ol> 
+  <button onclick="cl()">click me</button>
+  <script>
+      function cl()
+      {
+        var parent = document.getElementsByTagName("ol");
+        var child = document.getElementsByTagName("li");
+        parent[0].removeChild(child[1]);
+      }
+  </script>
+</body></html>
