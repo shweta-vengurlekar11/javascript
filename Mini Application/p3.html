@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDATOR</title>
+    <style>
+        body {
+            background-color: #eeeeee;
+            color: #333;
+        }
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .section{
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 10px;
+        }
+        .c1{
+            width: 50%;
+            padding: 5px;
+            margin: 5px;
+        }
+        #submit{
+            
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="contain">
+            <div class="header"><h1 style="text-align: center;">FORM VALIDATION</h1></div>
+            <div class="section">
+                <form name="form1" action="" method="self">
+                    <input class="c1" type="text" name="uid" id="uid" placeholder="USER ID" onkeyup="valuid()" required>
+                    <span id="war1"></span><br>
+                    &nbsp;&nbsp;PLEASE SELECT YOUR DATE OF BIRTH:<br>
+                    <input class="c1" type="date" name="dob" id="pass" placeholder="DATE OF BIRTH" onchange="valpass()" required>
+                    <span id="war2"></span><br>
+                    &nbsp;&nbsp;PLEASE SELECT YOUR GENDER:
+                    <input type="radio" id="male" name="gender" value="male" required>:Male&nbsp;&nbsp;
+                    <input type="radio" id="female" name="gender" value="female" required>:Female<br>
+                   
+                    <input class ="c1" type="textarea" id="address" placeholder="ADDRESS" required><br>
+                    <input class="c1" type="number" name="psno" id="psno" placeholder="PS NUMBER"  required>
+                    <input class="c1" type="number" name="batchno" id="batchno" placeholder="BATCH NUMBER"  required><br>
+                    &nbsp;&nbsp;PLEASE SELECT YOUR DATE OF JOINING:<br>
+                    <input class="c1" type="date" name="jdate" id="jdate" placeholder="DATE OF JOINING" required>
+                    <span id="war7"></span>
+                    <br>
+                    <input type="submit" value="SUBMIT" id="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        /*-----------------------------------username---------------------------------------------------------*/
+        function valuid(){
+            let x = document.forms['form1']['uid'].value;
+            let y = document.getElementById("war1");
+            //alert(x);
+            if(x != "" || x!= NULL){
+                if(x.length > 2 && x.length < 16){
+                    y.innerHTML = "Accepted!";
+                    y.style.color = "green";
+                }
+                else{
+                    y.innerHTML = "User Id shoud be 3 to 15 characters long!";
+                    y.style.color = "red";
+                }
+            }
+        }
+
+        /*------------------------------val2--------------------------------------------------------*/
+        function valpass()
+        {
+           let x= document.forms['form1']['pass'].value;
+           let a=x.split("-");
+           let y=new Date();
+           let z=y.getFullYear();
+          // let z=y.getFullYear()+"-0"+(y.getMonth()+1)+"-0"+y.getDay();
+          if(z-a[0]<18)
+          {
+           document.getElementById("war2").innerHTML="Candidate should be above 18 years of age"
+            document.getElementById("war2").style.color = "red";
+           } 
+           else
+           {
+           document.getElementById("war2").innerHTML="Accepted!";
+            document.getElementById("war2").style.color = "green";
+           } 
+    
+        }
+    </script>
+</body>
+</html>

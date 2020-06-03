@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDATOR</title>
+    <style>
+        body {
+            background-color: #eeeeee;
+            color: #333;
+        }
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .section{
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 10px;
+        }
+        .c1{
+            width: 50%;
+            padding: 5px;
+            margin: 5px;
+        }
+        #submit{
+            
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="contain">
+            <div class="header"><h1 style="text-align: center;">PERSONAL DETAILS</h1></div>
+            <div class="section">
+                <form name="form1" action="" method="self">
+                    <input class="c1" type="text" name="uid" id="uid" placeholder="Enter your Name" onkeyup="valuid()" required>
+                    <span id="war1"></span><br>
+                    <input class="c1" type="number" name="age" id="age" placeholder="Enter your Age" onchange="valage()" required>
+                    <span id="war2"></span><br>               
+                    <input class ="c1" type="number" id="mob" placeholder="Enter Yor Mobile Number" onchange="valmob()" required>
+                    <span id="war3"></span><br>     
+                    <input class="c1" type="text" name="email" id="email" placeholder="Enter your Email-Id"  onchange="valemail()" required>
+                    <span id="war4"></span><br>   
+                    <br>
+                    <input type="submit" value="SUBMIT" id="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        /*-----------------------------------name---------------------------------------------------------*/
+        function valuid(){
+            let x = document.forms['form1']['uid'].value;
+            let y = document.getElementById("war1");
+            let reg=/^[a-zA-Z]{3,15}$/
+            if(reg.test(x)){
+                    y.innerHTML = "Accepted!";
+                    y.style.color = "green";
+                }
+                else{
+                    y.innerHTML = "User Id shoud be 3 to 15 characters long!";
+                    y.style.color = "red";
+                }
+            }
+        
+            /*------------------------------age--------------------------------------------------------*/
+            function valage()
+                    {
+                    let x= document.forms['form1']['age'].value;
+                    let reg=/\b(1[89]|[2-9][0-9]|100)\b/;
+                    if(reg.test(x))
+                    {
+                    document.getElementById("war2").innerHTML="Accepted!";
+                        document.getElementById("war2").style.color = "green";
+                    } 
+                    else{
+                        document.getElementById("war2").innerHTML="Age should be between 18 to 100";
+                        document.getElementById("war2").style.color = "red";
+                    }
+                    }
+               /*------------------------------mobilenumber--------------------------------------------------------*/
+               function valmob()
+                    {
+                    let x= document.forms['form1']['mob'].value;
+                    let reg=/^([1-9]{1}[0-9]{9})$/;
+                    if(reg.test(x))
+                    {
+                    document.getElementById("war3").innerHTML="Accepted!";
+                        document.getElementById("war3").style.color = "green";
+                    } 
+                    else{
+                        document.getElementById("war3").innerHTML="Mob Number is in wrong format";
+                        document.getElementById("war3").style.color = "red";
+                    }
+                    }
+    
+        /*----------------------------------------------emailid--------------------------------------------------------*/
+        function valemail()
+        {
+           let x= document.forms['form1']['email'].value;
+           
+          if(/@/.test(x))
+           {
+           document.getElementById("war4").innerHTML="Accepted!";
+            document.getElementById("war4").style.color = "green";
+           } 
+    
+        }
+    </script>
+</body>
+</html>

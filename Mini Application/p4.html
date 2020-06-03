@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                background-color: lightgrey;
+                width: 300px;
+                border: 15px solid green;
+                padding: 50px;
+                margin: 20px;
+                }
+                img { 
+                width: 100%;
+                height: auto;
+                }
+        </style>
+    </head>
+<body>
+    <button id="frwd" type="button">forward</button>
+    <div>
+    <img id="myImage" src="i1.jpg">
+    </div>
+    <button class="c1" id="bck" type="button">back</button>
+   
+    <script>
+        let pic = ['i1.jpg', 'i2.jpg', 'i3.jpg','i4.jpg'];
+        let imageno = 0;
+        document.getElementById("frwd").addEventListener('click', forward);
+        document.getElementById("bck").addEventListener('click', back);
+        function forward() {
+            imageno = (imageno + 1);
+            if(imageno>3)
+            alert("No More Images to show");
+            else{
+          
+            document.getElementById("myImage").src = pic[imageno];
+            }
+        }
+        function back() {
+            imageno = (imageno - 1) ;
+            if(imageno<0)
+            alert("No More Images to show");
+            else
+           {
+            document.getElementById("myImage").src = pic[imageno];
+        }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+   
+    <button value="SUBMIT" onclick="stopwatch1()">Start</button>
+    <p id="demo"></p>
+    <script>
+        function stopwatch1(){
+            let hr=00;
+            let min=0;
+            let sec=0;
+            let msec=0;
+            var t = setInterval(timer1, 1);
+            function timer1(){   
+                msec++;
+                if(msec==1000)      
+                {
+                    sec++;
+                    msec=0;
+                }  
+            if(sec==60)
+            {
+                min++;
+                sec=0;
+            }
+            if(min==60)
+            {
+                hr++;
+                min=00;
+            }
+            document.getElementById("demo").innerHTML=hr+": "+min+": "+sec+": "+msec;
+            }
+           
+        
+        }
+    </script>
+   
+</body>
+</html>

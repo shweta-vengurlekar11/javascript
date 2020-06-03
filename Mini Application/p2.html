@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+   
+    <button value="SUBMIT" onclick="stopwatch1()">Start</button>
+    <p id="demo"></p>
+    <script>
+        function stopwatch1(){
+        
+            var d = new Date();
+            let min=5;
+            let sec=60;
+            var t = setInterval(timer1, 1000);
+            function timer1(){
+            if(min>=0)
+            {
+                sec--;
+                if(sec<0) {
+                    min--;
+                    sec=60;
+                }
+                else
+            document.getElementById("demo").innerHTML=min+": "+sec;
+            }
+            else
+            {
+            clearInterval(t);
+            alert("timeout!");
+            }
+        }
+        }
+    </script>
+   
+</body>
+</html>

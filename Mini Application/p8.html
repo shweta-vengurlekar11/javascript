@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                background-color: lightgrey;
+                width: 300px;
+                border: 15px solid green;
+                padding: 50px;
+                margin: 20px;
+                }
+                img { 
+                width: 100%;
+                height: auto;
+                }
+        </style>
+    </head>
+<body>
+   
+    <div>
+    <img id="myImage" src="i1.jpg">
+    </div>
+    <button onclick="clearInterval(t)">Stop Rotation</button>
+    <script>
+        let pic = ['i1.jpg', 'i2.jpg', 'i3.jpg','i4.jpg'];
+        let imageno = 0;
+        var t=setInterval(forward,1000)
+        function forward() {
+            imageno = (imageno + 1);
+            if(imageno==4)
+            {
+                imageno=0;
+            }
+            
+            document.getElementById("myImage").src = pic[imageno];
+           
+        }
+        
+    </script>
+</body>
+</html>
