@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#clk").click(function(){
+    $("#in2").val($('#in1').val());
+  });
+});
+</script>
+</head>
+<body>
+<h4>Create two text boxes and a buttons on click of button it should copy data from one text box to another</h4>
+Input 1: <input id="in1"><br><br>
+Input 2: <input id="in2"><br><br>
+<button id="clk">click to copy data</button>
+
+</body>
+</html>

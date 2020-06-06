@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("input").click(function(){
+      var co=$('input[name="colors"]:checked').val();
+    $("textarea").css("color",co);
+  });
+});
+</script>
+</head>
+<body>
+<h4> Create radio buttons showing name of colors. Create a text area,  
+    when user type text in text area it should get the color as per radio button clicked</h4>
+<input type="radio" id="f1" name="colors" value="red"> Red<br><br>
+<input type="radio" id="f2" name="colors" value="orange"> Orange<br><br>
+<input type="radio" id="f3" name="colors" value="blue"> Blue<br><br>
+<input type="radio" id="f4" name="colors" value="green"> Green<br><br>
+textarea: <textarea col="20" row="5"></textarea>
+</body>
+</html>
